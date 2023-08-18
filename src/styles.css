@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+.text-underline-hover {
+  text-decoration: none;
+}
+
+.text-underline-hover:hover {
+  text-decoration: underline;
+}
+
+.full-height {
+  height: 100vh !important;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+/* colors for house */
+.footer {
+  background-color: #2a623d;
+}
+
+.navi {
+  background-color: #2a623d;
+}
+
+
+/* Color palette */
+
+.bg-dark {
+  color: #1a472a;
+}
+
+.bg-light {
+  color: #2a623d;
+}
+
+.bg-yellow {
+  color: #9e7e00;
+}
+
+.bg-cream {
+  color: #fffeeb;
+}
+
+/* Mobile view ports */
+
+@media only screen and (max-device-width: 576px) {
+  .dropdown-menu {
+    background-color: #2a623d !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+
+  .dropdown-item {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+
+  .dropdown-item:hover {
+    cursor: pointer;
+    background-color: #9e7e00 !important;
+    color: #9e7e00 !important;
+  }
+
+  .material-icons {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+}
