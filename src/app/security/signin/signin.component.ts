@@ -1,3 +1,12 @@
+/**
+ * Title: signin.component.ts
+ * Author: Professor Krasso
+ * Co-Author: Janis Gonzalez
+ * Date: 8/17/23
+ * Description: sign-in component for nodebucket application
+ */
+
+// import
 import { SecurityService } from './../security.service';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -35,6 +44,7 @@ export class SigninComponent {
     this.errorMessage = ''
   }
 
+  // sign in with invalid empId returns error message
   signin() {
     this.isLoading = true;
     const empId = this.signinForm.controls['empId'].value

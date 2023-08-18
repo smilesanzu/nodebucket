@@ -1,3 +1,12 @@
+/**
+ * Title: employee.js
+ * Author: Professor Krasso
+ * Co-Author: Janis Gonzalez
+ * Date: 8/17/2023
+ * Description: JS for employees
+ */
+
+
 'use strict'
 const express = require('express')
 const router = express.Router()
@@ -5,7 +14,7 @@ const { mongo } = require('../utils/mongo')
 
 /**
  * findEmployeeById
- * Description: Acccept values 1007-1012
+ * Description: Accept values 1007-1012
  * @example
  * localhost:3000/api/employees/1007 - 200: Success
  * localhost:3000/api/employees/asdf - 400: Bad Request

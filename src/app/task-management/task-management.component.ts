@@ -1,3 +1,10 @@
+/**
+ * Title: app-routing.module.ts
+ * Author: Professor Krasso
+ * Co-Author: Janis Gonzalez
+ * Date: 8/17/23
+ */
+
 import { Component } from '@angular/core';
 
 @Component({

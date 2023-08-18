@@ -1,7 +1,9 @@
 /**
  * Title: security-routing.module.ts
  * Author: Professor Krasso
- * Date: 8/5/23
+ * Co-Author: Janis Gonzalez
+ * Date: 8/17/23
+ * Description: security routing module for nodebucket application
  */
 
 // imports statements

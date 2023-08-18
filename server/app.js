@@ -1,7 +1,9 @@
 /**
  * Title: app.js
  * Author: Professor Krasso
- * Date: 8/5/2023
+ * Co-Author: Janis Gonzalez
+ * Date: 8/17/2023
+ * Description: JS for application
  */
 'use strict'
 
