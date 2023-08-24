@@ -29,7 +29,7 @@ const mongo = async(operations, next) => {
     console.log('Operation was successful')
 
     // Close the connection
-    client.close()
+    client.close();
     console.log('Closing connection to MongoDB Atlas...')
   } catch (err) {
     const error = new Error('Error connecting to db', err)

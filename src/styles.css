@@ -37,6 +37,11 @@
 }
 
 .signin-btn {
+  background-color: #9e7e00 !important;
+  outline: grey;
+}
+
+.phone-btn {
   background-color: #1a472a !important;
 }
 
