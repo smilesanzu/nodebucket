@@ -49,7 +49,7 @@ const taskSchema = {
  * localhost:3000/api/employees/1008 - 500: Server Error (When not connected to the DB)
  */
 
-router.get('/:empId/tasks', (req, res, next) => {
+router.get('/:empId', (req, res, next) => {
   try {
     console.log('empId', req.params.empId)
 
@@ -151,7 +151,7 @@ router.post('/:empId/tasks', (req, res, next) => {
       console.log('employee', employee)
 
       if (!employee) {
-        const err = new Error('Unable to find employee with empId' + empId)
+        const err = new Error('Unable to find employee with empId ' + empId)
         err.status = 404
         console.log('err', err)
         next(err)
@@ -159,7 +159,7 @@ router.post('/:empId/tasks', (req, res, next) => {
       }
 
       const { task } = req.body
-      console.log('New task:', task)
+      console.log('New task: ', task)
       console.log('body', req.body)
 
       // validate the req object

@@ -29,7 +29,7 @@ import { SigninComponent } from './signin/signin.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ]
 })
 export class SecurityModule { }

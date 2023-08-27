@@ -55,7 +55,7 @@ export class SigninComponent {
       return
     }
 
-    this.secService.findEmployeeId(empId).subscribe({
+    this.secService.findEmployeeById(empId).subscribe({
       next: (employee: any) => {
         this.sessionUser = employee
         this.cookieService.set('session_user', empId, 1)
@@ -69,8 +69,8 @@ export class SigninComponent {
       error: (err) => {
         this.isLoading = false
 
-        if (err.errorMessage) {
-          this.errorMessage = err.error.errorMessage
+        if (err.error.message) {
+          this.errorMessage = err.error.message
           return
         }
         this.errorMessage = err.message

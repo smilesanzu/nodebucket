@@ -1,3 +1,10 @@
+/**
+ * Title: task.service.ts
+ * Author: Professor Krasso
+ * Co-Author: Janis Gonzalez
+ * Date: 8/27/23
+ */
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Item } from './item.interface'

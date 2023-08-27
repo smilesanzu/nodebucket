@@ -1,5 +1,9 @@
 /**
- * Janis Gonzalez
+ * Title: mongo.js
+ * Author: Professor Krasso
+ * Co-Author: Janis Gonzalez
+ * Date: 8/24/2023
+ * Description: JS for application
  */
 
 'use strict'
