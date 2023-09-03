@@ -35,7 +35,7 @@
     <form [formGroup]="newTaskForm" (ngSubmit)="addTask();">
       <div class="input-group mb-3">
         <input type="text" class="form-control" formControlName="text" placeholder="Add a new task" aria-label="Add a new task" aria-describedby="btnAdd">
-        <button class="btn btn-outline-secondary" type="submit" [disabled]="!newTaskForm.valid" id="btnAdd">Add</button>
+        <button class="btn btn-outline-secondary addbtn" type="submit" [disabled]="!newTaskForm.valid" id="btnAdd">Add</button>
       </div>
 
       <!-- testing -->
@@ -100,9 +100,18 @@
   <!-- todo column-->
   <div class="col-sm-5 col-md-4 col-lg-3">
     <h4 class="text-center">ToDo</h4>
+
     <div class="p-3 border bg-light">
 
-      <div class="container">
+      <!-- TODO drag and drop-->
+      <div
+      class="container task-column"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      (cdkDropListDropped)="drop($event)">
+
         <!-- message for no todo tasks -->
         <div *ngIf="!todo || todo.length === 0">
           <div class="alert alert-info">
@@ -110,11 +119,13 @@
           </div>
         </div>
 
-        <!-- send message for no todo -->
-        <div *ngFor="let item of todo" class="mt-2">
-          <div class="row border bg-white">
+        <!-- send message for no todo with cdkDrag -->
+        <div *ngFor="let item of todo" cdkDrag class="mt-2">
+
+          <div class="row border bg-white task-hover">
             <div class="col-sm-6">
               <div class="card-body">
+
                 <button
                 *ngIf="item.category.categoryName !='other'"
                 [ngStyle]=" { 'background-color': item.category.backgroundColor }"
@@ -129,7 +140,27 @@
                 </div>
               </div>
             </div>
+            <!-- end col-sm-6 -->
+
+            <div class="col-sm-6 d-none d-sm-block d-md-block d-lg-block d-xl-block">
+              <div class="card-body float-end">
+                <button class="btn" (click)="deleteTask(item._id ?? '')">
+                  <span class="material-icons">delete</span>
+                </button>
+              </div>
+            </div>
+            <!-- end second col-sm-6-->
+
+            <!-- only for mobile viewports -->
+            <div class="col-12 d-sm-none d-md-none d-lg-none d-xl-none d-grid gap-2 p-2">
+              <button class="btn btn-secondary deletebtn" (click)="deleteTask(item._id ?? '')">
+                Delete
+              </button>
+
+            </div>
+            <!-- end of mobile viewports-->
           </div>
+          <!-- end row -->
 
         </div>
       </div>
@@ -140,7 +171,13 @@
   <h4 class="text-center">Done</h4>
   <div class="p-3 border bg-light">
 
-    <div class="container">
+    <!-- DONE Drag and Drop-->
+    <div class="container task-column"
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[todoList]"
+    (cdkDropListDropped)="drop($event)">
       <!-- message for not done tasks -->
       <div *ngIf="!done || done.length === 0">
         <div class="alert alert-info">
@@ -148,13 +185,13 @@
         </div>
       </div>
 
-      <!-- send message for not done -->
-      <div *ngFor="let item of done" class="mt-2">
-        <div class="row border bg-white">
+      <!-- send message for not done with cdkDrag-->
+      <div *ngFor="let item of done" cdkDrag class="mt-2">
+        <div class="row border bg-white task-hover">
           <div class="col-sm-6">
             <div class="card-body">
               <button
-              *ngIf="item.category.categoryName !='other'"
+              *ngIf="item.category.categoryName != 'other'"
               [ngStyle]=" { 'background-color': item.category.backgroundColor }"
               data-bs-toggle="tooltip"
               title="{{ item.category.categoryName }}"
@@ -167,7 +204,24 @@
               </div>
             </div>
           </div>
+          <!-- end of col-sm-6 -->
+          <div class="col-sm-6 d-none d-sm-block d-md-block d-lg-block d-xl-block">
+            <div class="card-body float-end">
+              <button class="btn" (click)="deleteTask(item._id ?? '')">
+                <span class="material-icons">delete</span>
+              </button>
+            </div>
+          </div>
+          <!-- end of  second col-sm-6-->
+          <!-- only for mobile viewports -->
+          <div class="col-12 d-sm-none d-md-none d-lg-none d-xl-none d-grid gap-2 p-2">
+            <button class="btn btn-secondary deletebtn" (click)="deleteTask(item._id ?? '')">
+              Delete
+            </button>
+
+          </div>
         </div>
+        <!-- end of row -->
 
       </div>
     </div>

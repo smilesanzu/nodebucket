@@ -1,0 +1,20 @@
+/*
+============================================
+; Title: Nodebucket
+; File Name: about.component.css
+; Author: Professor Krasso
+; Modified By: Janis Gonzalez
+; Description: This is styling for about component
+;===========================================
+*/
+
+.about {
+  background-color: #2a623d94;
+  margin-top: -1%;
+}
+
+/* Team names color */
+.team {
+  color: #1a472a;
+}
+

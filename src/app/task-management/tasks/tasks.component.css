@@ -1,0 +1,15 @@
+.task-column {
+  min-height: 200px;
+}
+
+.task-hover:hover {
+  cursor: pointer;
+}
+
+.addbtn {
+  background-color: #9e7e00;
+}
+
+.deletebtn {
+  background-color: #9e7e00;
+}
